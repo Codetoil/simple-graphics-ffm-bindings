@@ -1,0 +1,6 @@
+module:glfw
+glfw3
+module:glfw_vulkan
+glfw_vulkan
+module:vulkan
+vulkan

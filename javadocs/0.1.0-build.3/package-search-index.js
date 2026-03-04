@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html","k":"18"},{"m":"glfw_vulkan","l":"glfw_vulkan"},{"m":"glfw","l":"glfw3"},{"m":"vulkan","l":"vulkan"}];updateSearchResults();

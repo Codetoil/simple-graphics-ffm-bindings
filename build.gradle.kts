@@ -4,7 +4,7 @@ plugins {
 }
 
 dependencies {
-    javadoc(project(":vulkan"))
-    javadoc(project(":glfw-vulkan"))
-    javadoc(project(":glfw"))
+    javadoc(project(":simple-graphics-ffm-bindings-vulkan"))
+    javadoc(project(":simple-graphics-ffm-bindings-glfw-vulkan"))
+    javadoc(project(":simple-graphics-ffm-bindings-glfw"))
 }

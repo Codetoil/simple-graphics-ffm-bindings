@@ -12,8 +12,8 @@ val nonJar by configurations.creating
 
 dependencies {
     nonJar(files("../../LICENSE.md"))
-    api(project(":glfw"))
-    api(project(":vulkan"))
+    api(project(":simple-graphics-ffm-bindings-glfw"))
+    api(project(":simple-graphics-ffm-bindings-vulkan"))
 }
 
 publishing {

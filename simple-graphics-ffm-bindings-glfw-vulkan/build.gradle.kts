@@ -10,10 +10,26 @@ base.archivesName = "simple-graphics-ffm-bindings-glfw-vulkan"
 
 val nonJar by configurations.creating
 
+val junitVersion: String by project
+
+repositories {
+    mavenCentral()
+}
+
 dependencies {
     nonJar(files("../../LICENSE.md"))
     api(project(":simple-graphics-ffm-bindings-glfw"))
     api(project(":simple-graphics-ffm-bindings-vulkan"))
+}
+
+tasks.named<Test>("test") {
+    useJUnitPlatform()
+}
+
+tasks.jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    destinationDirectory = File("$rootDir/archive-quilt/cli-modules")
+    from(nonJar)
 }
 
 publishing {

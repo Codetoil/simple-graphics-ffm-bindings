@@ -1,0 +1,31 @@
+# modified from https://theawesomegarage.com/blog/automating-relases-with-github-actions
+
+name: Create Debug Release
+on:
+  push:
+    branches:
+      - preview
+
+env:
+  VERSION: 0.1.0
+
+jobs:
+  create-debug-release:
+    runs-on: ubuntu-24.04
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.VERSION }}-build.${{ github.run_number }}
+          name: "Debug Release ${{ env.VERSION }}-build.${{ github.run_number }}"
+          generate_release_notes: true
+          draft: false
+          prerelease: true
+          token: ${{ secrets.SGFFM_BINDINGS_DEBUG_RELEASE_PAT }}

@@ -3,3 +3,9 @@ plugins {
     id("org.jetbrains.qodana") version "2025.3.1"
     id("io.github.sgtsilvio.gradle.javadoc-links") version "0.9.0" apply false
 }
+
+dependencies {
+    javadoc(project(":vulkan"))
+    javadoc(project(":glfw-vulkan"))
+    javadoc(project(":glfw"))
+}

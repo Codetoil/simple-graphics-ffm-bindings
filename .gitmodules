@@ -1,6 +1,6 @@
-[submodule "glfw/src/glfw"]
-	path = glfw/src/glfw
-	url = https://github.com/glfw/glfw.git
-[submodule "vulkan/src/vulkan"]
-	path = vulkan/src/vulkan
+[submodule "simple-graphics-ffm-bindings-vulkan/src/vulkan"]
+	path = simple-graphics-ffm-bindings-vulkan/src/vulkan
 	url = https://github.com/KhronosGroup/Vulkan-Headers.git
+[submodule "simple-graphics-ffm-bindings-glfw/src/glfw"]
+	path = simple-graphics-ffm-bindings-glfw/src/glfw
+	url = https://github.com/Glfw/glfw.git

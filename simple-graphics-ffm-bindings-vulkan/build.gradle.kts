@@ -8,10 +8,29 @@ group = "io.codetoil"
 version = "0.1.0-SNAPSHOT"
 base.archivesName = "simple-graphics-ffm-bindings-vulkan"
 
+val junitVersion: String by project
+
 val nonJar by configurations.creating
+
+repositories {
+    mavenCentral()
+}
 
 dependencies {
     nonJar(files("../LICENSE.md"))
+
+    testImplementation(platform("org.junit:junit-bom:${junitVersion}"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+}
+
+tasks.named<Test>("test") {
+    useJUnitPlatform()
+}
+
+tasks.jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from(nonJar)
 }
 
 publishing {

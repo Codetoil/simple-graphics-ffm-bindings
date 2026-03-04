@@ -6,12 +6,33 @@ plugins {
 
 group = "io.codetoil"
 version = "0.1.0-SNAPSHOT"
-base.archivesName = "simple-graphics-ffm-bindings-glfw"
+base.archivesName = "simple-graphics-ffm-bindings-glfw-vulkan"
 
 val nonJar by configurations.creating
 
+val junitVersion: String by project
+
+repositories {
+    mavenCentral()
+}
+
 dependencies {
     nonJar(files("../../LICENSE.md"))
+    api(project(":simple-graphics-ffm-bindings-glfw"))
+    api(project(":simple-graphics-ffm-bindings-vulkan"))
+
+    testImplementation(platform("org.junit:junit-bom:${junitVersion}"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+}
+
+tasks.named<Test>("test") {
+    useJUnitPlatform()
+}
+
+tasks.jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from(nonJar)
 }
 
 publishing {
@@ -30,7 +51,7 @@ publishing {
             pom {
                 packaging = "jar"
 
-                name = "Simple Graphics FFM Bindings (GLFW)"
+                name = "Simple Graphics FFM Bindings (GLFW Vulkan)"
                 url = "https://github.com/Codetoil/simple-graphics-ffm-bindings"
                 inceptionYear = "2026"
                 licenses {

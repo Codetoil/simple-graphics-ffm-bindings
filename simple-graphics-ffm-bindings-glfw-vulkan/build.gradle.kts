@@ -20,6 +20,10 @@ dependencies {
     nonJar(files("../../LICENSE.md"))
     api(project(":simple-graphics-ffm-bindings-glfw"))
     api(project(":simple-graphics-ffm-bindings-vulkan"))
+
+    testImplementation(platform("org.junit:junit-bom:${junitVersion}"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 tasks.named<Test>("test") {

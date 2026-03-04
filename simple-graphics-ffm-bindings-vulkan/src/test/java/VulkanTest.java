@@ -1,8 +1,8 @@
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.Test;
 
-class GLFWTest1 {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+class VulkanTest {
 
     @Test
     void addition() {

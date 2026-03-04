@@ -6,6 +6,7 @@ plugins {
 
 group = "io.codetoil"
 version = "0.1.0-SNAPSHOT"
+base.archivesName = "simple-graphics-ffm-bindings-glfw"
 
 val nonJar by configurations.creating
 
@@ -29,7 +30,7 @@ publishing {
             pom {
                 packaging = "jar"
 
-                name = "Simple Graphics FFM Bindings"
+                name = "Simple Graphics FFM Bindings (GLFW)"
                 url = "https://github.com/Codetoil/simple-graphics-ffm-bindings"
                 inceptionYear = "2026"
                 licenses {

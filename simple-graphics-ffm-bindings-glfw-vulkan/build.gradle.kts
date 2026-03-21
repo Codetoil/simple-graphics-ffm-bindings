@@ -12,6 +12,11 @@ val nonJar by configurations.creating
 
 val junitVersion: String by project
 
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
 repositories {
     mavenCentral()
 }

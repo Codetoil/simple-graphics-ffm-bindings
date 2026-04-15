@@ -20,7 +20,7 @@ jobs:
           java-version: '25'
           distribution: 'temurin'
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v5
+        uses: gradle/actions/setup-gradle@v6
       # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
       # the publishing section of your build.gradle.kts
       - name: Publish to GitHub Packages
